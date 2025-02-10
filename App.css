@@ -1,0 +1,212 @@
+/* Global resets & defaults */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: "Open Sans", Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Container styling */
+.container {
+  width: 95%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.header h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #444;
+}
+
+/* Buttons */
+button {
+  background-color: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+button:hover {
+  background-color: #115293;
+}
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Table styling (like a simple MUI style) */
+.table-container {
+  margin: 1rem auto;
+  /* width: 100%; */
+  max-width: 98%;
+
+  /* Add these lines for vertical scrolling */
+  max-height: 700px;   /* or any preferred height limit */
+  overflow-y: auto;  
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.table thead {
+  background-color: #1976d2;
+  color: #fff;
+}
+.table th,
+.table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+  font-size: 0.88rem;
+}
+.table tr:last-child td {
+  border-bottom: none;
+}
+.table .action-btn {
+  margin-right: 0.3rem;
+}
+.table .delete-btn {
+  background-color: #dc3545; 
+}
+.table .delete-btn:hover {
+  background-color: #b02a37;
+}
+
+/* Responsive table: wrap if needed */
+@media (max-width: 768px) {
+  .table-container {
+    width: 95%;
+  }
+  .table th,
+  .table td {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem auto;
+  gap: 0.5rem;
+}
+.pagination button {
+  min-width: 32px;
+  height: 32px;
+  padding: 0;
+}
+.pagination .active {
+  background-color: #115293;
+}
+
+/* Form container for the modal content */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.form-group label {
+  font-weight: 600;
+}
+.form-group input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Utility margin/padding classes */
+.mt-1 {
+  margin-top: 1rem;
+}
+
+/* Spinner / loading indicator (small) */
+.spinner {
+  border: 4px solid #f3f3f3; /* Light grey */
+  border-top: 4px solid #1976d2; /* Blue */
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Error alert */
+.alert {
+  background-color: #e74c3c;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  margin: 1rem 0;
+}
+
+/* Modal Overlay & content */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.modal-content {
+  background-color: #fff;
+  border-radius: 6px;
+  width: 90%;
+  max-width: 500px;
+  padding: 1.5rem;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+.close-btn {
+  background-color: transparent;
+  color: #999;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.close-btn:hover {
+  color: #444;
+}
